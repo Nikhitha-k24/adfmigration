@@ -1,0 +1,147 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfprojectnikhitha"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"DS_SOURCE_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_SOURCE_CSV'"
+		},
+		"LS_BULKPARQUET_SCHTRIGGER_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULKPARQUET_SCHTRIGGER'"
+		},
+		"LS_CSVBULKUPLOAD_SCHTRIGGER_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSVBULKUPLOAD_SCHTRIGGER'"
+		},
+		"LS_EVENTTRIGGER_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENTTRIGGER_SINK'"
+		},
+		"LS_EVENTTRIGGER_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENTTRIGGER_SOURCE'"
+		},
+		"LS_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SINK_PARQUET'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcestorage.dfs.core.windows.net/"
+		},
+		"DS_SOURCE_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsourcestorage.dfs.core.windows.net/"
+		},
+		"LS_BULKPARQUET_SCHTRIGGER_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssinkschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_CSVBULKUPLOAD_SCHTRIGGER_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssourceschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_EVENTTRIGGER_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssinkschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssourceschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
+		"eventtrigger_manualfiles_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/badc70d3-96fa-4b31-ba6b-15cfd4e79783/resourceGroups/devprojectnikhitha/providers/Microsoft.Storage/storageAccounts/adlssourceschtriggercsv"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfprojectnikhitha_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"DS_SOURCE_CSV_accountKey": {
+						"value": "[parameters('DS_SOURCE_CSV_accountKey')]"
+					},
+					"LS_BULKPARQUET_SCHTRIGGER_accountKey": {
+						"value": "[parameters('LS_BULKPARQUET_SCHTRIGGER_accountKey')]"
+					},
+					"LS_CSVBULKUPLOAD_SCHTRIGGER_accountKey": {
+						"value": "[parameters('LS_CSVBULKUPLOAD_SCHTRIGGER_accountKey')]"
+					},
+					"LS_EVENTTRIGGER_SINK_accountKey": {
+						"value": "[parameters('LS_EVENTTRIGGER_SINK_accountKey')]"
+					},
+					"LS_EVENTTRIGGER_SOURCE_accountKey": {
+						"value": "[parameters('LS_EVENTTRIGGER_SOURCE_accountKey')]"
+					},
+					"LS_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_SINK_PARQUET_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"DS_SOURCE_CSV_properties_typeProperties_url": {
+						"value": "[parameters('DS_SOURCE_CSV_properties_typeProperties_url')]"
+					},
+					"LS_BULKPARQUET_SCHTRIGGER_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULKPARQUET_SCHTRIGGER_properties_typeProperties_url')]"
+					},
+					"LS_CSVBULKUPLOAD_SCHTRIGGER_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSVBULKUPLOAD_SCHTRIGGER_properties_typeProperties_url')]"
+					},
+					"LS_EVENTTRIGGER_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_EVENTTRIGGER_SINK_properties_typeProperties_url')]"
+					},
+					"LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SINK_PARQUET_properties_typeProperties_url')]"
+					},
+					"eventtrigger_manualfiles_properties_typeProperties_scope": {
+						"value": "[parameters('eventtrigger_manualfiles_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
