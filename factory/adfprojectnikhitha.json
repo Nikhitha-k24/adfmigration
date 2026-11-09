@@ -1,0 +1,15 @@
+{
+	"name": "adfprojectnikhitha",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "714ff2d6-d314-47f7-9cb9-7e4dbb403821",
+		"tenantId": "d537befa-ad6e-4a65-9f81-e69c7b919256"
+	}
+}

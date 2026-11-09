@@ -1,0 +1,24 @@
+{
+	"name": "SCH_BULKCSV",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLSCSV_TO_PARQUETADLS_SCHTRIGGERS",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-11-06T11:25:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

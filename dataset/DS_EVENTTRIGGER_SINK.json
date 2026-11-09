@@ -1,0 +1,20 @@
+{
+	"name": "DS_EVENTTRIGGER_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EVENTTRIGGER_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "outputeventcontainer"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
