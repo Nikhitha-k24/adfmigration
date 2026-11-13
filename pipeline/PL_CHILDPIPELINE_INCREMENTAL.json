@@ -87,7 +87,18 @@
 						"referenceName": "PL_CHILDPIPELINE_STORED_PROCEDURE",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"TableSchema": {
+							"value": "@pipeline().parameters.TableName",
+							"type": "Expression"
+						},
+						"TableName": "@pipeline().parameters.TableName",
+						"WatermarkColumn": {
+							"value": "@pipeline().parameters.WatermarkColumn",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
