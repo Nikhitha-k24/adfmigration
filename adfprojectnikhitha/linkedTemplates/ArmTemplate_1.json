@@ -573,17 +573,7 @@
 						"policy": {
 							"secureInput": false
 						},
-						"userProperties": [
-							{
-								"name": "TableSchema"
-							},
-							{
-								"name": "TableName"
-							},
-							{
-								"name": "WatermarkColumn"
-							}
-						],
+						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
 								"referenceName": "PL_CHILDPIPELINE_STORED_PROCEDURE",

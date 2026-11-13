@@ -530,17 +530,7 @@
 						"policy": {
 							"secureInput": false
 						},
-						"userProperties": [
-							{
-								"name": "TableSchema"
-							},
-							{
-								"name": "TableName"
-							},
-							{
-								"name": "WatermarkColumn"
-							}
-						],
+						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
 								"referenceName": "PL_CHILDPIPELINE_STORED_PROCEDURE",
@@ -843,7 +833,10 @@
 							"value": "@concat(dataset().Table_Name,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')",
 							"type": "Expression"
 						},
-						"folderPath": "@concat(dataset().Table_Name,'/',formatDateTime(utcNow(),'yyyy/MM/dd'))",
+						"folderPath": {
+							"value": "@concat(dataset().Table_Name,'/',formatDateTime(utcNow(),'yyyy/MM/dd'))",
+							"type": "Expression"
+						},
 						"fileSystem": "sqlbulkdatamigrationoutput"
 					},
 					"compressionCodec": "snappy"
