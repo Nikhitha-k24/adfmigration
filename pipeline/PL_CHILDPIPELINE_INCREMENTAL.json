@@ -17,10 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": {
-							"value": "SELECT MAX(\n    @{pipeline().parameters.WatermarkColumn}\n) AS MaxValue\nFROM\n    @{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}",
-							"type": "Expression"
-						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -28,7 +24,11 @@
 						"referenceName": "DS_LOOKUP_MAX_VALUE",
 						"type": "DatasetReference",
 						"parameters": {
-							"schemaname": "@pipeline().parameters.TableSchema"
+							"schemaname": {
+								"value": "@pipeline().parameters.TableSchema",
+								"type": "Expression"
+							},
+							"tablename": "@pipeline().parameters.TableName"
 						}
 					},
 					"firstRowOnly": false
