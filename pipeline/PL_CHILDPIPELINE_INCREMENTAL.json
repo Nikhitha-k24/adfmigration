@@ -47,7 +47,7 @@
 				"type": "string"
 			},
 			"LastLoadValue": {
-				"type": "int"
+				"type": "string"
 			}
 		},
 		"annotations": []
