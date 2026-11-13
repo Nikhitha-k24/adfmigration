@@ -11,13 +11,29 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"DS_ONPREMISE_SQLSERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_ONPREMISE_SQLSERVER'"
+		},
 		"DS_SOURCE_CSV_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_SOURCE_CSV'"
 		},
+		"DS_SQL_ADLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'DS_SQL_ADLS'"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_BULKDATA_MIGRATION_SQL'"
+		},
 		"LS_BULKPARQUET_SCHTRIGGER_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_BULKPARQUET_SCHTRIGGER'"
+		},
+		"LS_BULKUPLOAD_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_BULKUPLOAD_SQL'"
 		},
 		"LS_CSVBULKUPLOAD_SCHTRIGGER_accountKey": {
 			"type": "secureString",
@@ -31,21 +47,89 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EVENTTRIGGER_SOURCE'"
 		},
+		"LS_MAX_VALUE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_MAX_VALUE'"
+		},
+		"LS_RESTAPI_JSON_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_JSON'"
+		},
 		"LS_SINK_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SINK_PARQUET'"
+		},
+		"LS_SOURCESQL_FROM_PARENT_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SOURCESQL_FROM_PARENT'"
+		},
+		"LS_SQLADLS_TO_PARQUETADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLADLS_TO_PARQUETADLS'"
+		},
+		"LS_SQLBULK_TO_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQLBULK_TO_PARQUET'"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcestorage.dfs.core.windows.net/"
 		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration001"
+		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
 		"DS_SOURCE_CSV_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsourcestorage.dfs.core.windows.net/"
 		},
+		"DS_SQL_ADLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2025"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration001"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
 		"LS_BULKPARQUET_SCHTRIGGER_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlssinkschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration001"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
 		},
 		"LS_CSVBULKUPLOAD_SCHTRIGGER_properties_typeProperties_url": {
 			"type": "string",
@@ -59,7 +143,47 @@
 			"type": "string",
 			"defaultValue": "https://adlssourceschtriggercsv.dfs.core.windows.net/"
 		},
+		"LS_MAX_VALUE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_MAX_VALUE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration001"
+		},
+		"LS_MAX_VALUE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_RESTAPI_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_RESTAPI_JSON_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
 		"LS_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlmigration001"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQLADLS_TO_PARQUETADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
+		"LS_SQLBULK_TO_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
 		},
@@ -112,8 +236,20 @@
 					"LS_EVENTTRIGGER_SOURCE_accountKey": {
 						"value": "[parameters('LS_EVENTTRIGGER_SOURCE_accountKey')]"
 					},
+					"LS_RESTAPI_JSON_accountKey": {
+						"value": "[parameters('LS_RESTAPI_JSON_accountKey')]"
+					},
 					"LS_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_SINK_PARQUET_accountKey')]"
+					},
+					"LS_SQLADLS_TO_PARQUETADLS_accountKey": {
+						"value": "[parameters('LS_SQLADLS_TO_PARQUETADLS_accountKey')]"
+					},
+					"LS_SQLBULK_TO_PARQUET_accountKey": {
+						"value": "[parameters('LS_SQLBULK_TO_PARQUET_accountKey')]"
+					},
+					"DS_ONPREMISE_SQLSERVER_password": {
+						"value": "[parameters('DS_ONPREMISE_SQLSERVER_password')]"
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
@@ -133,15 +269,116 @@
 					"LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url')]"
 					},
+					"LS_RESTAPI_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_JSON_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_JSON_properties_typeProperties_url')]"
+					},
 					"LS_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SINK_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SQLADLS_TO_PARQUETADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLADLS_TO_PARQUETADLS_properties_typeProperties_url')]"
+					},
+					"LS_SQLBULK_TO_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLBULK_TO_PARQUET_properties_typeProperties_url')]"
+					},
+					"DS_ONPREMISE_SQLSERVER_properties_typeProperties_server": {
+						"value": "[parameters('DS_ONPREMISE_SQLSERVER_properties_typeProperties_server')]"
+					},
+					"DS_ONPREMISE_SQLSERVER_properties_typeProperties_database": {
+						"value": "[parameters('DS_ONPREMISE_SQLSERVER_properties_typeProperties_database')]"
+					},
+					"DS_ONPREMISE_SQLSERVER_properties_typeProperties_userName": {
+						"value": "[parameters('DS_ONPREMISE_SQLSERVER_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfprojectnikhitha_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DS_SQL_ADLS_password": {
+						"value": "[parameters('DS_SQL_ADLS_password')]"
+					},
+					"LS_BULKDATA_MIGRATION_SQL_password": {
+						"value": "[parameters('LS_BULKDATA_MIGRATION_SQL_password')]"
+					},
+					"LS_BULKUPLOAD_SQL_password": {
+						"value": "[parameters('LS_BULKUPLOAD_SQL_password')]"
+					},
+					"LS_MAX_VALUE_password": {
+						"value": "[parameters('LS_MAX_VALUE_password')]"
+					},
+					"LS_SOURCESQL_FROM_PARENT_password": {
+						"value": "[parameters('LS_SOURCESQL_FROM_PARENT_password')]"
+					},
+					"DS_SQL_ADLS_properties_typeProperties_server": {
+						"value": "[parameters('DS_SQL_ADLS_properties_typeProperties_server')]"
+					},
+					"DS_SQL_ADLS_properties_typeProperties_database": {
+						"value": "[parameters('DS_SQL_ADLS_properties_typeProperties_database')]"
+					},
+					"DS_SQL_ADLS_properties_typeProperties_userName": {
+						"value": "[parameters('DS_SQL_ADLS_properties_typeProperties_userName')]"
+					},
+					"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_server')]"
+					},
+					"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_database')]"
+					},
+					"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_BULKUPLOAD_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_BULKUPLOAD_SQL_properties_typeProperties_server')]"
+					},
+					"LS_BULKUPLOAD_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_BULKUPLOAD_SQL_properties_typeProperties_database')]"
+					},
+					"LS_BULKUPLOAD_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_BULKUPLOAD_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_MAX_VALUE_properties_typeProperties_server": {
+						"value": "[parameters('LS_MAX_VALUE_properties_typeProperties_server')]"
+					},
+					"LS_MAX_VALUE_properties_typeProperties_database": {
+						"value": "[parameters('LS_MAX_VALUE_properties_typeProperties_database')]"
+					},
+					"LS_MAX_VALUE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_MAX_VALUE_properties_typeProperties_userName')]"
+					},
+					"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_server": {
+						"value": "[parameters('LS_SOURCESQL_FROM_PARENT_properties_typeProperties_server')]"
+					},
+					"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_database": {
+						"value": "[parameters('LS_SOURCESQL_FROM_PARENT_properties_typeProperties_database')]"
+					},
+					"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SOURCESQL_FROM_PARENT_properties_typeProperties_userName')]"
 					},
 					"eventtrigger_manualfiles_properties_typeProperties_scope": {
 						"value": "[parameters('eventtrigger_manualfiles_properties_typeProperties_scope')]"
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfprojectnikhitha_ArmTemplate_0')]"
+			]
 		}
 	]
 }

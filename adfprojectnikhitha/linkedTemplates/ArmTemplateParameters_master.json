@@ -8,10 +8,22 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"DS_ONPREMISE_SQLSERVER_password": {
+			"value": ""
+		},
 		"DS_SOURCE_CSV_accountKey": {
 			"value": ""
 		},
+		"DS_SQL_ADLS_password": {
+			"value": ""
+		},
+		"LS_BULKDATA_MIGRATION_SQL_password": {
+			"value": ""
+		},
 		"LS_BULKPARQUET_SCHTRIGGER_accountKey": {
+			"value": ""
+		},
+		"LS_BULKUPLOAD_SQL_password": {
 			"value": ""
 		},
 		"LS_CSVBULKUPLOAD_SCHTRIGGER_accountKey": {
@@ -23,17 +35,68 @@
 		"LS_EVENTTRIGGER_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_MAX_VALUE_password": {
+			"value": ""
+		},
+		"LS_RESTAPI_JSON_accountKey": {
+			"value": ""
+		},
 		"LS_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SOURCESQL_FROM_PARENT_password": {
+			"value": ""
+		},
+		"LS_SQLADLS_TO_PARQUETADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SQLBULK_TO_PARQUET_accountKey": {
 			"value": ""
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcestorage.dfs.core.windows.net/"
 		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_database": {
+			"value": "sqlmigration001"
+		},
+		"DS_ONPREMISE_SQLSERVER_properties_typeProperties_userName": {
+			"value": "sa"
+		},
 		"DS_SOURCE_CSV_properties_typeProperties_url": {
 			"value": "https://adlsdevsourcestorage.dfs.core.windows.net/"
 		},
+		"DS_SQL_ADLS_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"DS_SQL_ADLS_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_database": {
+			"value": "sqlmigration001"
+		},
+		"LS_BULKDATA_MIGRATION_SQL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
 		"LS_BULKPARQUET_SCHTRIGGER_properties_typeProperties_url": {
 			"value": "https://adlssinkschtriggercsv.dfs.core.windows.net/"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_database": {
+			"value": "sqlmigration001"
+		},
+		"LS_BULKUPLOAD_SQL_properties_typeProperties_userName": {
+			"value": "sa"
 		},
 		"LS_CSVBULKUPLOAD_SCHTRIGGER_properties_typeProperties_url": {
 			"value": "https://adlssourceschtriggercsv.dfs.core.windows.net/"
@@ -44,7 +107,37 @@
 		"LS_EVENTTRIGGER_SOURCE_properties_typeProperties_url": {
 			"value": "https://adlssourceschtriggercsv.dfs.core.windows.net/"
 		},
+		"LS_MAX_VALUE_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_MAX_VALUE_properties_typeProperties_database": {
+			"value": "sqlmigration001"
+		},
+		"LS_MAX_VALUE_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_RESTAPI_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_RESTAPI_JSON_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
 		"LS_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_server": {
+			"value": "DESKTOP-DDKBEBK\\SQLEXPRESS"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_database": {
+			"value": "sqlmigration001"
+		},
+		"LS_SOURCESQL_FROM_PARENT_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQLADLS_TO_PARQUETADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
+		},
+		"LS_SQLBULK_TO_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsdevsinkstorage002.dfs.core.windows.net/"
 		},
 		"eventtrigger_manualfiles_properties_typeProperties_scope": {
