@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "COPYSQL_FULL_LOADINCREMENT_TABLE",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -21,7 +21,24 @@
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -32,7 +49,46 @@
 							"tablename": "@pipeline().parameters.TableName"
 						}
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQLBULK_TO_PARQUET",
+						"type": "DatasetReference"
+					}
 				]
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "COPYSQL_FULL_LOADINCREMENT_TABLE",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "TableSchema"
+					},
+					{
+						"name": "TableName"
+					},
+					{
+						"name": "WatermarkColumn"
+					}
+				],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_CHILDPIPELINE_STORED_PROCEDURE",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
