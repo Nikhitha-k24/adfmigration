@@ -1,0 +1,54 @@
+{
+	"name": "PL_CHILDPIPELINE_INCREMENTAL",
+	"properties": {
+		"activities": [
+			{
+				"name": "LOOKUP_MAX_VALUE",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": {
+							"value": "SELECT MAX(\n    @{pipeline().parameters.WatermarkColumn}\n) AS MaxValue\nFROM\n    @{pipeline().parameters.TableSchema}.@{pipeline().parameters.TableName}",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_LOOKUP_MAX_VALUE",
+						"type": "DatasetReference",
+						"parameters": {
+							"schemaname": "@pipeline().parameters.TableSchema"
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"TableSchema": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			},
+			"WatermarkColumn": {
+				"type": "string"
+			},
+			"LastLoadValue": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
