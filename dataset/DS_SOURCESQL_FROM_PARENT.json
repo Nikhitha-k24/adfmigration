@@ -1,0 +1,23 @@
+{
+	"name": "DS_SOURCESQL_FROM_PARENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SOURCESQL_FROM_PARENT",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schemaname": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": ""
+		}
+	}
+}
