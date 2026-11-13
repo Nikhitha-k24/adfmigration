@@ -1,0 +1,21 @@
+{
+	"name": "DS_SQLBULK_TO_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLBULK_TO_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@concat(dataset().Table_Name,'_',formatDateTime(utcNow(),'yyyyMMddHHmmss'),'.parquet')",
+				"folderPath": "@concat(dataset().Table_Name,'/',formatDateTime(utcNow(),'yyyy/MM/dd’))",
+				"fileSystem": "sqlbulkdatamigrationoutput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
