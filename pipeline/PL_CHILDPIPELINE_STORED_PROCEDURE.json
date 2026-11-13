@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Stored procedure1",
+				"name": "STOREDPROCEDURE_UPDATE_WATERMARK",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
