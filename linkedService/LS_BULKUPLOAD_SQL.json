@@ -1,0 +1,21 @@
+{
+	"name": "LS_BULKUPLOAD_SQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-DDKBEBK\\SQLEXPRESS",
+			"database": "sqlmigration001",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjZmE2YzFiNC1lYzg0LTRhMjktYjIwNS1jZjNlZTg2YTlmZDUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime3",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
