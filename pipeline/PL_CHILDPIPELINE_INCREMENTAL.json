@@ -17,7 +17,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "@concat(\n    'SELECT * FROM ',\n    pipeline().parameters.TableSchema, '.', pipeline().parameters.TableName,\n    if(\n        equals(pipeline().parameters.LastLoadValue, null),\n        '', \n        concat(\n            ' WHERE ', pipeline().parameters.WatermarkColumn,\n            ' > ''', pipeline().parameters.LastLoadValue, ''''\n        )\n    )\n)",
+						"sqlReaderQuery": {
+							"value": "@concat(\n    'SELECT * FROM ',\n    pipeline().parameters.TableSchema, '.', pipeline().parameters.TableName,\n    if(\n        equals(pipeline().parameters.LastLoadValue, null),\n        '', \n        concat(\n            ' WHERE ', pipeline().parameters.WatermarkColumn,\n            ' > ''', pipeline().parameters.LastLoadValue, ''''\n        )\n    )\n)",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -53,7 +56,10 @@
 				"outputs": [
 					{
 						"referenceName": "DS_SQLBULK_TO_PARQUET",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Table_Name": "@pipeline().parameters.TableName"
+						}
 					}
 				]
 			},
@@ -93,7 +99,10 @@
 							"value": "@pipeline().parameters.TableName",
 							"type": "Expression"
 						},
-						"TableName": "@pipeline().parameters.TableName",
+						"TableName": {
+							"value": "@pipeline().parameters.TableName",
+							"type": "Expression"
+						},
 						"WatermarkColumn": {
 							"value": "@pipeline().parameters.WatermarkColumn",
 							"type": "Expression"
